@@ -4,26 +4,24 @@ const hbs = require('hbs');
 
 // sets the app up 
 var app = express(); 
+var currentYear = new Date().getFullYear()
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) =>  {
     // res.send('<h1> Hello Express! </h1>');
-
-    res.send({
-        name: 'Ethan', 
-        likes: [
-            'biking',
-            'cities'
-        ]
-    })
+    res.render('home.hbs', {
+        pageTitle: 'Home Page',
+        currentYear,
+        welcomeMessage: 'Welcome one and all'
+    });
 });
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
-        currentYear: new Date().getFullYear()
+        currentYear
     });
 });
 
