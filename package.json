@@ -1,0 +1,22 @@
+{
+  "name": "node-around",
+  "version": "1.0.0",
+  "description": "playing around with node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunnyE/node-around.git"
+  },
+  "author": "Ethan Favia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunnyE/node-around/issues"
+  },
+  "homepage": "https://github.com/SunnyE/node-around#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
