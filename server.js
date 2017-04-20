@@ -4,7 +4,10 @@ const hbs = require('hbs');
 
 // sets the app up 
 var app = express(); 
-var currentYear = new Date().getFullYear()
+var currentYear = new Date().getFullYear();
+
+// sets up the server to handle partials 
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));

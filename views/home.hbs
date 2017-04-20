@@ -9,11 +9,11 @@
         <title> Home Page </title>
     </head>
     <body>
-        <h1 style="text-align:center"> {{pageTitle}} </h1>
+        {{> header}}
+
         <p style="text-align:center"> Landing page for all </p>
+
         <p style="text-align:center">{{welcomeMessage}}</p>
-        <footer>
-            Copyright {{currentYear}}  
-        </footer>
+        {{> footer}}
     </body>
 </html>
