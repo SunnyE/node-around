@@ -4,7 +4,7 @@ const hbs = require('hbs');
 
 // sets the app up 
 var app = express(); 
-var currentYear = new Date().getFullYear();
+
 
 // sets up the server to handle partials 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -12,11 +12,19 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
+// registers the get year function as a helper so it can be accessed easier
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear();
+});
+
+hbs.registerHelper('screamIt', (text) => {
+    return text.toUpperCase(); 
+});
+
 app.get('/', (req, res) =>  {
     // res.send('<h1> Hello Express! </h1>');
     res.render('home.hbs', {
         pageTitle: 'Home Page',
-        currentYear,
         welcomeMessage: 'Welcome one and all'
     });
 });
@@ -24,7 +32,7 @@ app.get('/', (req, res) =>  {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
-        currentYear
+        
     });
 });
 
