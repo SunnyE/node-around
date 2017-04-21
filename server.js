@@ -26,6 +26,13 @@ app.use((req, res, next) => {
     next(); 
 });
 
+app.use((req, res, next) => {
+    res.render('maintenance.hbs', {
+        pageTitle: 'Maintenance Page',
+        
+    });
+});
+
 // registers the get year function as a helper so it can be accessed easier
 hbs.registerHelper('getCurrentYear', () => {
     return new Date().getFullYear();
