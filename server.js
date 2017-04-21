@@ -26,12 +26,12 @@ app.use((req, res, next) => {
     next(); 
 });
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs', {
-        pageTitle: 'Maintenance Page',
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs', {
+//         pageTitle: 'Maintenance Page',
         
-    });
-});
+//     });
+// });
 
 // registers the get year function as a helper so it can be accessed easier
 hbs.registerHelper('getCurrentYear', () => {
@@ -54,6 +54,12 @@ app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
         
+    });
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
     });
 });
 
